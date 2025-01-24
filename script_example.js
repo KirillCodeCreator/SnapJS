@@ -1,4 +1,4 @@
-import { initDataBinding, getElementById, createElement, appendChild, addEventListener } from 'CoreFW/index.js';
+import { initDataBinding, getElementById, createElement, appendChild, addEventListener, applyStyles } from 'CoreFW/index.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     const dataBinder = initDataBinding('dataElement', 'Initial Data');
@@ -14,4 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
     addEventListener(button, 'click', () => {
         dataBinder.updateData('Button Clicked!');
     });
+
+    const styles = `
+        #dataElement {
+            color: blue;
+            font-size: 20px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    `;
+
+    applyStyles(document.head, styles);
 });
