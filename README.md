@@ -1,110 +1,110 @@
-CoreFW — это модульный frontend-framework, написанный на JavaScript. Он предоставляет инструменты для двустороннего связывания данных, управления событиями, манипуляции DOM и применения стилей через CSS-in-JS.
+CoreFW is a modular frontend framework written in JavaScript. It provides tools for two-way data binding, event management, DOM manipulation, and style application via CSS-in-JS.
 
-## Модули и методы
+## Modules and methods
 
 ### dataBinding.js
 
-Этот модуль отвечает за двустороннее связывание данных.
+This module is responsible for two-way data binding.
 
 #### DataBinder
 
-Класс `DataBinder` связывает элемент DOM с данными и автоматически обновляет содержимое элемента при изменении данных.
+The DataBinder class binds the DOM element to the data and automatically updates the element's contents when the data changes.
 
 - **constructor(element, data)**
-  - **element**: Элемент DOM, к которому будут привязаны данные.
-  - **data**: Начальные данные для привязки.
-  - Инициализирует элемент и данные, а также вызывает метод `bindData`.
+- **element**: The DOM element to which the data will be bound.
+  - **data**: Initial data for binding.
+  - Initializes the element and data, and calls the 'bindData` method.
 
 - **bindData()**
-  - Обновляет содержимое элемента на основе данных.
+- Updates the content of the element based on the data.
 
 - **updateData(newData)**
-  - **newData**: Новые данные для обновления.
-  - Обновляет данные и вызывает метод `bindData` для обновления содержимого элемента.
+- **newData**: New data to update.
+  - Updates the data and calls the `bindData` method to update the content of the element.
 
 ### utils.js
 
-Этот модуль предоставляет утилиты для работы с DOM.
+This module provides utilities for working with the DOM.
 
 - **getElementById(id)**
-  - **id**: Идентификатор элемента.
-  - Возвращает элемент DOM по его идентификатору.
+- **id**: Element ID.
+  - Returns the DOM element by its ID.
 
 - **createElement(tagName)**
-  - **tagName**: Имя тега элемента.
-  - Создаёт новый элемент DOM с указанным тегом.
+- **tagName**: The name of the element tag.
+  - Creates a new DOM element with the specified tag.
 
 ### eventHandlers.js
 
-Этот модуль предоставляет методы для управления событиями.
+This module provides methods for event management.
 
 - **addEventListener(element, event, handler)**
-  - **element**: Элемент DOM.
-  - **event**: Название события.
-  - **handler**: Обработчик события.
-  - Добавляет обработчик события к элементу.
+- **element**: DOM element.
+  - **event**: The name of the event.
+  - **handler**: Event handler.
+  - Adds an event handler to the element.
 
 - **removeEventListener(element, event, handler)**
-  - **element**: Элемент DOM.
-  - **event**: Название события.
-  - **handler**: Обработчик события.
-  - Удаляет обработчик события из элемента.
+- **element**: DOM element.
+  - **event**: The name of the event.
+  - **handler**: Event handler.
+  - Removes the event handler from the element.
 
 ### domManipulation.js
 
-Этот модуль предоставляет методы для манипуляции DOM.
+This module provides methods for DOM manipulation.
 
 - **appendChild(parent, child)**
-  - **parent**: Родительский элемент.
-  - **child**: Дочерний элемент.
-  - Добавляет дочерний элемент к родительскому элементу.
+- **parent**: Parent element.
+  - **child**: Child element.
+  - Adds a child element to the parent element.
 
 - **removeChild(parent, child)**
-  - **parent**: Родительский элемент.
-  - **child**: Дочерний элемент.
-  - Удаляет дочерний элемент из родительского элемента.
+- **parent**: Parent element.
+  - **child**: Child element.
+  - Removes a child element from the parent element.
 
 - **setAttribute(element, attribute, value)**
-  - **element**: Элемент DOM.
-  - **attribute**: Название атрибута.
-  - **value**: Значение атрибута.
-  - Устанавливает значение атрибута для элемента.
+- **element**: DOM element.
+  - **attribute**: The name of the attribute.
+  - **value**: Attribute value.
+  - Sets the attribute value for the element.
 
 - **getAttribute(element, attribute)**
-  - **element**: Элемент DOM.
-  - **attribute**: Название атрибута.
-  - Возвращает значение атрибута для элемента.
+- **element**: DOM element.
+  - **attribute**: The name of the attribute.
+  - Returns the attribute value for the element.
 
 ### styleManager.js
 
-Этот модуль предоставляет методы для управления стилями через CSS-in-JS.
+This module provides methods for managing styles via CSS-in-JS.
 
 - **createStyleElement(styles)**
-  - **styles**: Строка с CSS-стилями.
-  - Создаёт элемент `<style>` с указанными стилями.
+  - **styles**: A string with CSS styles.
+  - Creates a `<style>` element with the specified styles.
 
 - **applyStyles(element, styles)**
-  - **element**: Элемент DOM, к которому будут применены стили.
-  - **styles**: Строка с CSS-стилями.
-  - Применяет стили к элементу, создавая и добавляя элемент `<style>`.
+- **element**: The DOM element to which styles will be applied.
+  - **styles**: A string with CSS styles.
+  - Applies styles to an element by creating and adding a `<style>` element.
 
 - **removeStyles(element)**
-  - **element**: Элемент DOM, из которого будут удалены стили.
-  - Удаляет все элементы `<style>` из указанного элемента.
+- **element**: The DOM element from which styles will be removed.
+  - Removes all `<style>` elements from the specified element.
 
 ### index.js
 
-Этот модуль экспортирует все методы и классы из других модулей для удобного использования.
+This module exports all methods and classes from other modules for easy use.
 
 - **initDataBinding(elementId, initialData)**
-  - **elementId**: Идентификатор элемента.
-  - **initialData**: Начальные данные для привязки.
-  - Инициализирует двустороннее связывание данных для элемента с указанным идентификатором и начальными данными.
+- **elementId**: Element ID.
+  - **initialData**: Initial data for binding.
+  - Initializes two-way data binding for an element with the specified identifier and initial data.
 
-- **Экспортируемые функции**:
-  - **getElementById**
-  - **createElement**
-  - **addEventListener**
+- **Exported functions**:
+- **getElementById**
+- **createElement**
+- **addEventListener**
   - **removeEventListener**
   - **appendChild**
   - **removeChild**
@@ -113,7 +113,7 @@ CoreFW — это модульный frontend-framework, написанный н
   - **applyStyles**
   - **removeStyles**
 
-## Пример использования
+## Usage example
 
 ### script_example.js
 
