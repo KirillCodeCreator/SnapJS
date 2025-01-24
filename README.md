@@ -115,10 +115,10 @@ CoreFW — это модульный frontend-framework, написанный н
 
 ## Пример использования
 
-### static/js/script.js
+### script_example.js
 
 ```javascript
-import { initDataBinding, getElementById, createElement, appendChild, addEventListener, applyStyles } from '../../CoreFW/index.js';
+import { initDataBinding, getElementById, createElement, appendChild, addEventListener, applyStyles } from 'CoreFW/index.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     const dataBinder = initDataBinding('dataElement', 'Initial Data');
