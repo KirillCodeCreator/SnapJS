@@ -2,6 +2,7 @@ import { DataBinder } from './dataBinding.js';
 import { getElementById, createElement } from './utils.js';
 import { addEventListener, removeEventListener } from './eventHandlers.js';
 import { appendChild, removeChild, setAttribute, getAttribute } from './domManipulation.js';
+import { applyStyles, removeStyles } from './styleManager.js';
 
 function initDataBinding(elementId, initialData) {
     const element = getElementById(elementId);
@@ -17,5 +18,7 @@ export {
     appendChild,
     removeChild,
     setAttribute,
-    getAttribute
+    getAttribute,
+    applyStyles,
+    removeStyles
 };
